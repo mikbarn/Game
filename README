@@ -1,0 +1,25 @@
+# 2D Rigid Body Physics Engine & Sandbox (Python)
+
+A modular, from-scratch 2D physics simulation environment built entirely in native Python. This project was developed as a deep-dive exploration of linear algebra, explicit numerical integration methods, and rigid body kinetics. It features a completely decoupled architecture separating core physics computation, UI rendering, and front-end application logic.
+
+## Technical Highlights
+* **Native Linear Algebra Package:** Built a custom 2D vector mathematics library (`Math2D`) complete with unit tests to manage translation, scale, dot products, and coordinate transformation sets.
+* **Rigid Body Dynamics Engine:** Implements rigid body kinematics (`RigidBody2D`), velocity/acceleration integration profiles, mass properties, and force accumulation loops.
+* **Decoupled Visual Stack:** Uses an isolated rendering module (`UI/Renderer.py`) to keep the visual drawing logic completely separated from the internal state changes of the physics engine.
+* **Engine Demonstration Sandboxes:** Validates engine performance across multiple runtime targets, including an explicit structural physics suite (`UITest`), a pool/billiards simulator (`Pool.py`), and a table tennis application (`TT.py`).
+
+## Architecture & Directory Structure
+```
+├── Math2D/                 # Low-level vector math framework
+│   └── Vec2D.py            # Native 2D vector class and geometric methods
+├── Physics2D/              # Rigid body kinematics core
+│   ├── Core.py             # Global simulation tick manager & state engine
+│   ├── RigidBody2D.py      # Mass, velocity, and force integration models
+│   └── UITest.py           # Explicit physics sandbox testbed
+├── UI/                     # Presentation layer
+│   └── Renderer.py         # Standalone rendering framework for screen space
+└── Games/                  # Sandbox applications leveraging the engine
+├── Pool.py             # Billiards/collision mechanics demonstration
+├── Crafty.py             # Billiards/collision mechanics demonstration
+└── TT.py               # Table Tennis kinematics application
+```
