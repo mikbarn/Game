@@ -1,4 +1,4 @@
-from Vec2D import Vec2D
+from Math2D.Vec2D import Vec2D
 
 class RigidBody2D:
     def __init__(self, vertices, pos = Vec2D(), velocity=Vec2D(), orientation = 0, angularVelocity = 0, mass = 1, inverseMass = 1, inertia = 1,
@@ -30,7 +30,7 @@ class RigidBody2D:
         #maintain list of vertex pairs which define edges with non parallel normal vectors, to avoid duplicate collision checks   
         count = len(self.worldVertices)
         self.worldNormalIndices.append((0,count-1))
-        for n in xrange(1, count):
+        for n in range(1, count):
             self.worldNormalIndices.append((n, n-1))
             
         for pair in self.worldNormalIndices:
@@ -39,8 +39,8 @@ class RigidBody2D:
         
         count = len(self.worldNormals)
         pairsToRemove = []
-        for i in xrange(0, count):
-            for j in xrange(i+1, count):
+        for i in range(0, count):
+            for j in range(i+1, count):
                 if abs(self.worldNormals[i].dot(self.worldNormals[j].getLeftPerpendicular())) < .0001:
                     if i == 0:
                         pairsToRemove.append((i, len(self.worldVertices)-1))

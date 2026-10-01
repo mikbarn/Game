@@ -1,12 +1,18 @@
-from Tkinter import *
+import sys
+import os
+# Append the root directory to the python path so it can find your modules
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from tkinter import *
 from math import sqrt
 import time
-from RigidBody2D import *
-from UI.Renderer import Renderer
-from Core import Physics
-from RigidBody2D import RigidBody2D
 
-from Math2D import *
+# Now these imports will resolve cleanly from the root directory
+from Physics2D.RigidBody2D import RigidBody2D
+from Physics2D.Core import Physics
+from UI.Renderer import Renderer
+
+from Math2D.Vec2D import Vec2D
 
 def click(event):
 #     global oldX, oldY

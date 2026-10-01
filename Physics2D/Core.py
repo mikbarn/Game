@@ -32,7 +32,7 @@ class Physics:
         sMax, vi = -99999999, 0 #max, vertex-index
         count = len(vertices)
         
-        for i in xrange(count):
+        for i in range(count):
             dp = vertices[i].dot(axis)
             if(dp > sMax):
                 sMax, vi = dp, i

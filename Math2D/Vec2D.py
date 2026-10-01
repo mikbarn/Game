@@ -18,7 +18,7 @@ class Vec2D:
 		return Vec2D(self.x - rhs.x, self.y - rhs.y)
 	
 	#divide/multiply changes length of vector but not direction
-	def __div__(self, scalar):
+	def __truediv__(self, scalar):
 		return Vec2D(self.x / scalar, self.y / scalar)
 	
 	def __mul__(self, scalar):
